@@ -1,0 +1,151 @@
+body {
+    padding: 0; 
+    margin: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-green {
+    color: green;
+}
+
+.text-green:hover {
+    color: darkgreen;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff; 
+    color: #333;
+}
+
+.logo-container .logo {
+    height: 100px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a, .login-button {
+    color: #fff;
+    text-decoration: none;
+    background-color: #03ab03;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.login-button {
+    cursor: pointer;
+    background-color: #03ab03;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f4f4f4;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    width: 100%;
+    max-width: 500px;
+    background-color: red;
+    color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+.hero-text h1 {
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.learn-more-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    color: rgb(254, 254, 254);
+    border: 2px solid red;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-text, .hero-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+}
