@@ -30,8 +30,8 @@ if (!empty($orderDetails['items']) && isset($orderDetails['totalPrice'])) {
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
-        $mail->Username = "mikniks.hotsauce@gmail.com";
-        $mail->Password = "ditdbdmtfaibipke";
+        $mail->Username = "example@mail.com";
+        $mail->Password = "your password";
 
         $mail->SMTPOptions = array(
             'ssl' => array(
@@ -42,14 +42,14 @@ if (!empty($orderDetails['items']) && isset($orderDetails['totalPrice'])) {
         );
 
         // Set From and Reply-To addresses
-        $mail->setFrom('mikniks.hotsauce@gmail.com', 'MikNiks Hot Sauce');
-        $mail->addReplyTo('mikniks.hotsauce@gmail.com', 'MikNiks Hot Sauce');
+        $mail->setFrom('example@mail.com', 'name');
+        $mail->addReplyTo('example@mail.com', 'name');
 
         // Add recipient (client)
         $mail->addAddress($clientEmail);
 
         // Add recipient (admin)
-        $adminEmail = 'mikniks.hotsauce@gmail.com';
+        $adminEmail = 'example@mail.com';
         $mail->addAddress($adminEmail);
 
         // Email subject
