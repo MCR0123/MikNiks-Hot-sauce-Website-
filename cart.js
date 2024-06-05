@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let clearCartButton = document.querySelector('.clearCartButton');
     let totalAmountSpan = document.querySelector('.total-amount-value');
     let cartMessage = document.createElement('div');
-    cartMessage.textContent = "Your cart is empty.";
     let quantitySpan = document.querySelector('.cart-counter');
+    let cashPaymentButton = document.getElementById('cashPaymentButton'); // Get the cash payment button
 
     let listCards = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             updateTotalAmountDisplay();
             document.querySelector('.total-amount').style.display = 'block';
             document.querySelector('.checkoutButton').style.display = 'block';
+            cashPaymentButton.style.display = 'block'; // Show the cash payment button
             if (listCard.contains(cartMessage)) {
                 listCard.removeChild(cartMessage);
             }
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             total.innerText = "Total R 0";
             document.querySelector('.total-amount').style.display = 'none';
             document.querySelector('.checkoutButton').style.display = 'none';
+            cashPaymentButton.style.display = 'none'; // Hide the cash payment button
             listCard.appendChild(cartMessage);
             document.querySelector('header h1').textContent = "Your Cart is Empty";
         }
@@ -100,12 +102,12 @@ document.addEventListener('DOMContentLoaded', function() {
     reloadCard();
     updateCartCounter(); // Initialize the counter on load
 
-    document.getElementById('cashPaymentButton').addEventListener('click', function() {
+    cashPaymentButton.addEventListener('click', function() {
         let orderDetails = {
             items: [],
             totalPrice: 0
         };
-    
+
         // Populate order details
         listCards.forEach(item => {
             let itemTotalPrice = item.price * item.quantity;
@@ -117,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             orderDetails.totalPrice += itemTotalPrice;
         });
-    
+
         // Send order details to server for processing
         fetch('process_cash_payment.php', {
             method: 'POST',
@@ -133,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.success) {
                 paymentMessage.textContent = 'Confirmation Email has been sent with order details.';
                 paymentMessage.style.display = 'block';
-    
+
                 // Clear the cart in localStorage
                 localStorage.removeItem('cart');
                 listCards = [];
@@ -151,5 +153,4 @@ document.addEventListener('DOMContentLoaded', function() {
             paymentMessage.style.display = 'block';
         });
     });
-    
 });
