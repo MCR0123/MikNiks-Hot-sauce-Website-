@@ -100,8 +100,8 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="contact-details">
                 <h3>Contact Details</h3>
-                <p>Email: mikniks.hotsauce@gmail.com</p>
-                <p>Phone: 083 607 2706</p>
+                <p>Email: example@mail.com</p>
+                <p>Phone: phone </p>
             </div>
         </div>
     </footer>
