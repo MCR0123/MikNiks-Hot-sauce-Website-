@@ -1,7 +1,7 @@
 <?php
 include 'admindb.php';
-$username = 'MikNiks';
-$password = password_hash('HotSauce@123', PASSWORD_DEFAULT); // Hash the password
+$username = 'Your username';
+$password = password_hash('Your Password', PASSWORD_DEFAULT); // Hash the password
 
 // Insert the new admin user into the admin_users table
 $query = "INSERT INTO admin_users (username, password) VALUES (?, ?)";
