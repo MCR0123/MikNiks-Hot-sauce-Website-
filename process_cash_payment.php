@@ -30,8 +30,8 @@ if (!empty($orderDetails['items']) && isset($orderDetails['totalPrice'])) {
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
-        $mail->Username = "mikniks.hotsauce@gmail.com";
-        $mail->Password = "ditdbdmtfaibipke";
+        $mail->Username = "youremail@example.com";
+        $mail->Password = "password";
 
         $mail->SMTPOptions = array(
             'ssl' => array(
