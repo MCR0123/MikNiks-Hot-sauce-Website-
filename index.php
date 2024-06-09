@@ -32,6 +32,7 @@ if (isset($_GET['logout'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MikNiks Hot Sauce</title>
+    <link rel="shortcut icon" type="image/jpg" href="logo.png"/>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -47,7 +48,7 @@ if (isset($_GET['logout'])) {
                 <li>
                     <a href="cart.php">
                         <img src="images/shopping.svg" alt="Shopping Cart" class="nav-cart-icon">
-                        <span class="cart-counter">0</span>
+                        <span class="cart-counter">0</span> <!-- Added span for counter -->
                     </a>
                 </li>
                 <?php if ($isLoggedIn): ?>
@@ -94,14 +95,18 @@ if (isset($_GET['logout'])) {
         <div class="footer-content">
             <div class="address">
                 <h3>Address</h3>
-                <p>123 Street Name</p>
+                <p>123 New Road</p>
                 <p>Midrand, Gauteng, 1687</p>
                 <p>South Africa</p>
             </div>
             <div class="contact-details">
                 <h3>Contact Details</h3>
-                <p>Email: example@mail.com</p>
-                <p>Phone: phone </p>
+                <p>Email: mikniks.hotsauce@gmail.com</p>
+                <p>Phone: 083 607 2706</p>
+            </div>
+            <div class="FAQ">
+                <h3>FAQ</h3>
+                <p><a href="FAQ.html">FAQ</a></p>
             </div>
         </div>
     </footer>

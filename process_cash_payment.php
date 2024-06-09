@@ -30,8 +30,8 @@ if (!empty($orderDetails['items']) && isset($orderDetails['totalPrice'])) {
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
-        $mail->Username = "example@mail.com";
-        $mail->Password = "your password";
+        $mail->Username = "mikniks.hotsauce@gmail.com";
+        $mail->Password = "ditdbdmtfaibipke";
 
         $mail->SMTPOptions = array(
             'ssl' => array(
@@ -42,15 +42,18 @@ if (!empty($orderDetails['items']) && isset($orderDetails['totalPrice'])) {
         );
 
         // Set From and Reply-To addresses
-        $mail->setFrom('example@mail.com', 'name');
-        $mail->addReplyTo('example@mail.com', 'name');
+        $mail->setFrom('mikniks.hotsauce@gmail.com', 'MikNiks Hot Sauce');
+        $mail->addReplyTo('mikniks.hotsauce@gmail.com', 'MikNiks Hot Sauce');
 
         // Add recipient (client)
         $mail->addAddress($clientEmail);
 
         // Add recipient (admin)
-        $adminEmail = 'example@mail.com';
+        $adminEmail = 'mikniks.hotsauce@gmail.com';
         $mail->addAddress($adminEmail);
+
+        // Generate invoice number
+        $invoiceNumber = 'INV-' . strtoupper(uniqid());
 
         // Email subject
         $mail->Subject = 'Order Details - Cash Payment';
@@ -60,7 +63,10 @@ if (!empty($orderDetails['items']) && isset($orderDetails['totalPrice'])) {
         $message .= "<div style='text-align: center;'>";
         $message .= "<img src='https://mikniks.great-site.net/MikNiks/logo.png' alt='Company Logo' style='width: 150px; height: auto;'><br><br>";
         $message .= "</div>";
-        $message .= "<h3>Order Details</h3>";
+        $message .= "<div style='display: flex; justify-content: space-between; align-items: center; margin-top: 20px;'>";
+        $message .= "<h3 style='flex: 1;'>Order Details</h3>";
+        $message .= "<h3 style='flex: 1; text-align: right; margin-left: 780px;'>Invoice #: {$invoiceNumber}</h3>";
+        $message .= "</div>";
         $message .= "<table border='1' cellpadding='5' cellspacing='0' style='border-collapse: collapse; width: 100%;'>";
         $message .= "<thead><tr><th>Item Name</th><th>Quantity</th><th>Price</th><th>Total</th></tr></thead><tbody>";
         foreach ($orderDetails['items'] as $item) {
@@ -98,9 +104,7 @@ if (!empty($orderDetails['items']) && isset($orderDetails['totalPrice'])) {
         // Set email format to HTML
         $mail->isHTML(true);
 
-
         $mail->send();
-
 
         unset($_SESSION['cart']);
 

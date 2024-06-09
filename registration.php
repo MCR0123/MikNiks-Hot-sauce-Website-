@@ -71,7 +71,7 @@ if (isset($_POST["submit"])) {
             $mail = require 'mailer.php';
 
             try {
-                $mail->setFrom('example@mail.com', 'name');
+                $mail->setFrom('mikniks.hotsauce@gmail.com', 'MikNiks HotSauce');
                 $mail->addAddress($email, $fullName);
                 $mail->Subject = 'Registration Successful';
                 

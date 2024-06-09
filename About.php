@@ -58,8 +58,12 @@
             </div>
             <div class="contact-details">
                 <h3>Contact Details</h3>
-                <p>Email:Example@mail.com</p>
-                <p>Phone: phone </p>
+                <p>Email:mikniks.hotsauce@gmail.com</p>
+                <p>Phone: 083 607 2706 </p>
+            </div>
+            <div class="FAQ">
+                <h3>FAQ</h3>
+                <p><a href="FAQ.html">FAQ</a></p>
             </div>
         </div>
     </footer>

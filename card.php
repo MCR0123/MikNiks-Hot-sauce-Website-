@@ -17,6 +17,7 @@ $totalAmount = $_SESSION['total_amount'] / 100; // Convert cents to dollars
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment - MikNiks Hot Sauce</title>
+    <link rel="shortcut icon" type="image/jpg" href="logo.png"/>
     <link rel="stylesheet" href="styles.css">
     <style>
         .container {
@@ -101,6 +102,10 @@ $totalAmount = $_SESSION['total_amount'] / 100; // Convert cents to dollars
                 <h3>Contact Details</h3>
                 <p>Email: MikNiks.hotsauce@gmail.com</p>
                 <p>Phone: 083 607 2706</p>
+            </div>
+            <div class="FAQ">
+                <h3>FAQ</h3>
+                <p><a href="FAQ.html">FAQ</a></p>
             </div>
         </div>
     </footer>
